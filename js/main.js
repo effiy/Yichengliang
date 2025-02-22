@@ -2,10 +2,6 @@
 
 Name: 		YiAi
 Version:  1.0
-Author:		Nazar Miller (millerDigitalDesign)
-�������أ�Http://www.bootstrapmb.com
-
-p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
 
 ------------------------------------------- */
 $(function () {
@@ -22,11 +18,6 @@ $(function () {
   // scrollbar
   Scrollbar.use(OverscrollPlugin);
   Scrollbar.init(document.querySelector("#scrollbar"), {
-    damping: 0.05,
-    renderByPixel: true,
-    continuousScrolling: true,
-  });
-  Scrollbar.init(document.querySelector("#scrollbar2"), {
     damping: 0.05,
     renderByPixel: true,
     continuousScrolling: true,
@@ -122,42 +113,6 @@ $(function () {
   });
 
   bar.animate(1);
-
-  var bar = new ProgressBar.Circle(circleprog2, {
-    strokeWidth: 7,
-    easing: "easeInOut",
-    duration: 1400,
-    delay: 2600,
-    trailWidth: 7,
-    step: function (state, circle) {
-      var value = Math.round(circle.value() * 100);
-      if (value === 0) {
-        circle.setText("");
-      } else {
-        circle.setText(value);
-      }
-    },
-  });
-
-  bar.animate(0.9);
-
-  var bar = new ProgressBar.Circle(circleprog3, {
-    strokeWidth: 7,
-    easing: "easeInOut",
-    duration: 1400,
-    delay: 2700,
-    trailWidth: 7,
-    step: function (state, circle) {
-      var value = Math.round(circle.value() * 100);
-      if (value === 0) {
-        circle.setText("");
-      } else {
-        circle.setText(value);
-      }
-    },
-  });
-
-  bar.animate(0.7);
 
   var bar = new ProgressBar.Line(lineprog1, {
     strokeWidth: 1.72,
@@ -655,4 +610,20 @@ $(function () {
       }
     });
   });
+
+  // circle progress init
+  function circleProgress() {
+    if (circleProgress1.length) {
+      circleProgress1.circleProgress({
+        value: 0.9,
+        size: 90,
+        lineCap: 'round',
+        fill: {
+          gradient: ["#FF6B6B", "#FFE66D"]
+        }
+      }).on('circle-animation-progress', function(event, progress, stepValue) {
+        $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2) + '%');
+      });
+    }
+  }
 });

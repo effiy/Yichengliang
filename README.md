@@ -69,12 +69,16 @@ git clone https://github.com/effiy/yichengliang.git
 
 2. 运行项目：
 
+如果你希望在浏览器中自动刷新页面，可以考虑使用 browser-sync。以下是如何使用 browser-sync 的步骤：
+
+1. 安装 browser-sync：
+
 ```bash
-http-server
+sudo npm install -g browser-sync
 ```
 
-3. 访问项目：
+2. 使用 browser-sync 启动服务器并监视文件变化：
 
 ```bash
-http://localhost:8080
+browser-sync start --server --files "*.html, *.css, *.js"
 ```
