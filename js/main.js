@@ -1,15 +1,14 @@
 /* -------------------------------------------
 
-Name: 		Arter
+Name: 		YiAi
 Version:  1.0
 Author:		Nazar Miller (millerDigitalDesign)
-¸ü¶àÏÂÔØ£ºHttp://www.bootstrapmb.com
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½Http://www.bootstrapmb.com
 
 p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
 
 ------------------------------------------- */
-$(function() {
-
+$(function () {
   "use strict";
 
   // swup js
@@ -22,294 +21,294 @@ $(function() {
 
   // scrollbar
   Scrollbar.use(OverscrollPlugin);
-  Scrollbar.init(document.querySelector('#scrollbar'), {
+  Scrollbar.init(document.querySelector("#scrollbar"), {
     damping: 0.05,
     renderByPixel: true,
     continuousScrolling: true,
   });
-  Scrollbar.init(document.querySelector('#scrollbar2'), {
+  Scrollbar.init(document.querySelector("#scrollbar2"), {
     damping: 0.05,
     renderByPixel: true,
     continuousScrolling: true,
   });
 
   // page loading
-  $(document).ready(function() {
+  $(document).ready(function () {
     anime({
-      targets: '.art-preloader .art-preloader-content',
+      targets: ".art-preloader .art-preloader-content",
       opacity: [0, 1],
       delay: 200,
       duration: 600,
-      easing: 'linear',
-      complete: function(anim) {
-
-      }
+      easing: "linear",
+      complete: function (anim) {},
     });
     anime({
-      targets: '.art-preloader',
+      targets: ".art-preloader",
       opacity: [1, 0],
       delay: 2200,
       duration: 400,
-      easing: 'linear',
-      complete: function(anim) {
-        $('.art-preloader').css('display', 'none');
-      }
+      easing: "linear",
+      complete: function (anim) {
+        $(".art-preloader").css("display", "none");
+      },
     });
   });
 
   var bar = new ProgressBar.Line(preloader, {
     strokeWidth: 1.7,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 750,
     trailWidth: 1.7,
     svgStyle: {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%",
     },
     step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
+      bar.setText(Math.round(bar.value() * 100) + " %");
+    },
   });
 
   bar.animate(1);
 
   // counters
   anime({
-    targets: '.art-counter-frame',
+    targets: ".art-counter-frame",
     opacity: [0, 1],
     duration: 800,
     delay: 2300,
-    easing: 'linear',
+    easing: "linear",
   });
 
   anime({
-    targets: '.art-counter',
+    targets: ".art-counter",
     delay: 1300,
     opacity: [1, 1],
-    complete: function(anim) {
-      $('.art-counter').each(function() {
-        $(this).prop('Counter', 0).animate({
-          Counter: $(this).text()
-        }, {
-          duration: 2000,
-          easing: 'linear',
-          step: function(now) {
-            $(this).text(Math.ceil(now));
-          }
-        });
+    complete: function (anim) {
+      $(".art-counter").each(function () {
+        $(this)
+          .prop("Counter", 0)
+          .animate(
+            {
+              Counter: $(this).text(),
+            },
+            {
+              duration: 2000,
+              easing: "linear",
+              step: function (now) {
+                $(this).text(Math.ceil(now));
+              },
+            }
+          );
       });
-    }
+    },
   });
 
   // progressbars
   var bar = new ProgressBar.Circle(circleprog1, {
     strokeWidth: 7,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 2500,
     trailWidth: 7,
-    step: function(state, circle) {
+    step: function (state, circle) {
       var value = Math.round(circle.value() * 100);
       if (value === 0) {
-        circle.setText('');
+        circle.setText("");
       } else {
         circle.setText(value);
       }
-    }
+    },
   });
 
   bar.animate(1);
 
   var bar = new ProgressBar.Circle(circleprog2, {
     strokeWidth: 7,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 2600,
     trailWidth: 7,
-    step: function(state, circle) {
+    step: function (state, circle) {
       var value = Math.round(circle.value() * 100);
       if (value === 0) {
-        circle.setText('');
+        circle.setText("");
       } else {
         circle.setText(value);
       }
-    }
+    },
   });
 
   bar.animate(0.9);
 
   var bar = new ProgressBar.Circle(circleprog3, {
     strokeWidth: 7,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 2700,
     trailWidth: 7,
-    step: function(state, circle) {
+    step: function (state, circle) {
       var value = Math.round(circle.value() * 100);
       if (value === 0) {
-        circle.setText('');
+        circle.setText("");
       } else {
         circle.setText(value);
       }
-    }
+    },
   });
 
   bar.animate(0.7);
 
   var bar = new ProgressBar.Line(lineprog1, {
     strokeWidth: 1.72,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 2800,
     trailWidth: 1.72,
     svgStyle: {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%",
     },
     step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
+      bar.setText(Math.round(bar.value() * 100) + " %");
+    },
   });
 
-  bar.animate(.9);
+  bar.animate(0.9);
 
   var bar = new ProgressBar.Line(lineprog2, {
     strokeWidth: 1.72,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 2900,
     trailWidth: 1.72,
     svgStyle: {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%",
     },
     step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
+      bar.setText(Math.round(bar.value() * 100) + " %");
+    },
   });
 
-  bar.animate(.95);
+  bar.animate(0.95);
 
   var bar = new ProgressBar.Line(lineprog3, {
     strokeWidth: 1.72,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 3000,
     trailWidth: 1.72,
     svgStyle: {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%",
     },
     step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
+      bar.setText(Math.round(bar.value() * 100) + " %");
+    },
   });
 
-  bar.animate(.75);
+  bar.animate(0.75);
 
   var bar = new ProgressBar.Line(lineprog4, {
     strokeWidth: 1.72,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 3100,
     trailWidth: 1.72,
     svgStyle: {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%",
     },
     step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
+      bar.setText(Math.round(bar.value() * 100) + " %");
+    },
   });
 
-  bar.animate(.65);
+  bar.animate(0.65);
 
   var bar = new ProgressBar.Line(lineprog5, {
     strokeWidth: 1.72,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     delay: 3200,
     trailWidth: 1.72,
     svgStyle: {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%",
     },
     step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
+      bar.setText(Math.round(bar.value() * 100) + " %");
+    },
   });
 
-  bar.animate(.85);
+  bar.animate(0.85);
 
   // Contact form
-  $('.art-input').keyup(function() {
+  $(".art-input").keyup(function () {
     if ($(this).val()) {
-      $(this).addClass('art-active');
+      $(this).addClass("art-active");
     } else {
-      $(this).removeClass('art-active');
+      $(this).removeClass("art-active");
     }
   });
 
-  $("#form").submit(function() {
+  $("#form").submit(function () {
     $.ajax({
       type: "POST",
       url: "mail.php",
-      data: $(this).serialize()
-    }).done(function() {
-
+      data: $(this).serialize(),
+    }).done(function () {
       var tl = anime.timeline({
-        easing: 'easeOutExpo',
+        easing: "easeOutExpo",
       });
 
-      tl
-        .add({
-          targets: '.art-submit',
-          opacity: 0,
-          scale: .5,
-        })
-        .add({
-          targets: '.art-success',
-          scale: 1,
-          height: '45px',
-        })
+      tl.add({
+        targets: ".art-submit",
+        opacity: 0,
+        scale: 0.5,
+      }).add({
+        targets: ".art-success",
+        scale: 1,
+        height: "45px",
+      });
     });
     return false;
   });
 
   // portfolio filter
-  $('.art-filter a').on('click', function() {
-    $('.art-filter .art-current').removeClass('art-current');
-    $(this).addClass('art-current');
+  $(".art-filter a").on("click", function () {
+    $(".art-filter .art-current").removeClass("art-current");
+    $(this).addClass("art-current");
 
-    var selector = $(this).data('filter');
-    $('.art-grid').isotope({
-      filter: selector
+    var selector = $(this).data("filter");
+    $(".art-grid").isotope({
+      filter: selector,
     });
     return false;
   });
 
   // masonry Grid
-  $('.art-grid').isotope({
-    filter: '*',
-    itemSelector: '.art-grid-item',
-    transitionDuration: '.6s',
+  $(".art-grid").isotope({
+    filter: "*",
+    itemSelector: ".art-grid-item",
+    transitionDuration: ".6s",
   });
 
   // slider testimonials
-  var swiper = new Swiper('.art-testimonial-slider', {
+  var swiper = new Swiper(".art-testimonial-slider", {
     slidesPerView: 3,
     spaceBetween: 30,
     speed: 1400,
     autoplay: false,
     autoplaySpeed: 5000,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: '.art-testi-swiper-next',
-      prevEl: '.art-testi-swiper-prev',
+      nextEl: ".art-testi-swiper-next",
+      prevEl: ".art-testi-swiper-prev",
     },
     breakpoints: {
       1500: {
@@ -325,7 +324,7 @@ $(function() {
   });
 
   // slider works
-  var swiper = new Swiper('.art-works-slider', {
+  var swiper = new Swiper(".art-works-slider", {
     slidesPerView: 3,
     spaceBetween: 30,
     speed: 1400,
@@ -334,12 +333,12 @@ $(function() {
     },
     autoplaySpeed: 5000,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: '.art-works-swiper-next',
-      prevEl: '.art-works-swiper-prev',
+      nextEl: ".art-works-swiper-next",
+      prevEl: ".art-works-swiper-prev",
     },
     breakpoints: {
       1500: {
@@ -355,7 +354,7 @@ $(function() {
   });
 
   // slider blog
-  var swiper = new Swiper('.art-blog-slider', {
+  var swiper = new Swiper(".art-blog-slider", {
     slidesPerView: 3,
     spaceBetween: 30,
     speed: 1400,
@@ -364,12 +363,12 @@ $(function() {
     },
     autoplaySpeed: 5000,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: '.art-blog-swiper-next',
-      prevEl: '.art-blog-swiper-prev',
+      nextEl: ".art-blog-swiper-next",
+      prevEl: ".art-blog-swiper-prev",
     },
     breakpoints: {
       1500: {
@@ -388,176 +387,162 @@ $(function() {
     animationEffect: "zoom-in-out",
     animationDuration: 600,
     transitionDuration: 1200,
-    buttons: [
-      "zoom",
-      "share",
-      "slideShow",
-      "thumbs",
-      "close"
-    ],
+    buttons: ["zoom", "share", "slideShow", "thumbs", "close"],
   });
 
   $('[data-fancybox="diplome"]').fancybox({
     animationEffect: "zoom-in-out",
     animationDuration: 600,
     transitionDuration: 1200,
-    buttons: [
-      "zoom",
-      "slideShow",
-      "thumbs",
-      "close",
-    ],
+    buttons: ["zoom", "slideShow", "thumbs", "close"],
   });
 
   $('[data-fancybox="avatar"]').fancybox({
     animationEffect: "zoom-in-out",
     animationDuration: 600,
     transitionDuration: 1200,
-    buttons: [
-      "zoom",
-      "close"
-    ],
+    buttons: ["zoom", "close"],
   });
 
   $('[data-fancybox="recommendation"]').fancybox({
     animationEffect: "zoom-in-out",
     animationDuration: 600,
     transitionDuration: 1200,
-    buttons: [
-      "zoom",
-      "slideShow",
-      "thumbs",
-      "close",
-    ],
+    buttons: ["zoom", "slideShow", "thumbs", "close"],
   });
 
   $.fancybox.defaults.hash = false;
 
-  $('.current-menu-item a').clone().appendTo('.art-current-page');
+  $(".current-menu-item a").clone().appendTo(".art-current-page");
 
-  $('.art-map-overlay').on('click', function() {
-    $(this).addClass('art-active');
+  $(".art-map-overlay").on("click", function () {
+    $(this).addClass("art-active");
   });
 
-  $('.art-info-bar-btn').on('click', function() {
-    $('.art-info-bar').toggleClass('art-active');
-    $('.art-menu-bar-btn').toggleClass('art-disabled');
+  $(".art-info-bar-btn").on("click", function () {
+    $(".art-info-bar").toggleClass("art-active");
+    $(".art-menu-bar-btn").toggleClass("art-disabled");
   });
 
-  $('.art-menu-bar-btn').on('click', function() {
-    $('.art-menu-bar-btn , .art-menu-bar').toggleClass("art-active");
-    $('.art-info-bar-btn').toggleClass('art-disabled');
+  $(".art-menu-bar-btn").on("click", function () {
+    $(".art-menu-bar-btn , .art-menu-bar").toggleClass("art-active");
+    $(".art-info-bar-btn").toggleClass("art-disabled");
   });
 
-  $('.art-info-bar-btn , .art-menu-bar-btn').on('click', function() {
-    $('.art-content').toggleClass('art-active');
+  $(".art-info-bar-btn , .art-menu-bar-btn").on("click", function () {
+    $(".art-content").toggleClass("art-active");
   });
 
-  $('.art-curtain , .art-mobile-top-bar').on('click', function() {
-    $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
+  $(".art-curtain , .art-mobile-top-bar").on("click", function () {
+    $(
+      ".art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn"
+    ).removeClass("art-active , art-disabled");
   });
 
-  $('.menu-item').on('click', function() {
-    if ($(this).hasClass('menu-item-has-children')) {
-      $(this).children('.sub-menu').toggleClass('art-active');
+  $(".menu-item").on("click", function () {
+    if ($(this).hasClass("menu-item-has-children")) {
+      $(this).children(".sub-menu").toggleClass("art-active");
     } else {
-      $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
+      $(
+        ".art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn"
+      ).removeClass("art-active , art-disabled");
     }
   });
 
   // reinit
-  document.addEventListener("swup:contentReplaced", function() {
-
+  document.addEventListener("swup:contentReplaced", function () {
     Scrollbar.use(OverscrollPlugin);
-    Scrollbar.init(document.querySelector('#scrollbar'), {
+    Scrollbar.init(document.querySelector("#scrollbar"), {
       damping: 0.05,
       renderByPixel: true,
       continuousScrolling: true,
     });
-    Scrollbar.init(document.querySelector('#scrollbar2'), {
+    Scrollbar.init(document.querySelector("#scrollbar2"), {
       damping: 0.05,
       renderByPixel: true,
       continuousScrolling: true,
     });
 
-    $("#form").submit(function() {
+    $("#form").submit(function () {
       $.ajax({
         type: "POST",
         url: "mail.php",
-        data: $(this).serialize()
-      }).done(function() {
-
+        data: $(this).serialize(),
+      }).done(function () {
         var tl = anime.timeline({
-          easing: 'easeOutExpo',
+          easing: "easeOutExpo",
         });
 
-        tl
-          .add({
-            targets: '.art-submit',
-            opacity: 0,
-            scale: .5,
-          })
-          .add({
-            targets: '.art-success',
-            scale: 1,
-            height: '45px',
-          })
+        tl.add({
+          targets: ".art-submit",
+          opacity: 0,
+          scale: 0.5,
+        }).add({
+          targets: ".art-success",
+          scale: 1,
+          height: "45px",
+        });
       });
       return false;
     });
 
     // Masonry Grid
-    $('.art-grid').isotope({
-      filter: '*',
-      itemSelector: '.art-grid-item',
-      transitionDuration: '.6s',
+    $(".art-grid").isotope({
+      filter: "*",
+      itemSelector: ".art-grid-item",
+      transitionDuration: ".6s",
     });
 
-    $('.art-filter a').on('click', function() {
-      $('.art-filter .art-current').removeClass('art-current');
-      $(this).addClass('art-current');
+    $(".art-filter a").on("click", function () {
+      $(".art-filter .art-current").removeClass("art-current");
+      $(this).addClass("art-current");
 
-      var selector = $(this).data('filter');
-      $('.art-grid').isotope({
-        filter: selector
+      var selector = $(this).data("filter");
+      $(".art-grid").isotope({
+        filter: selector,
       });
       return false;
     });
 
     anime({
-      targets: '.art-counter-frame',
+      targets: ".art-counter-frame",
       opacity: [0, 1],
       duration: 800,
       delay: 300,
-      easing: 'linear',
+      easing: "linear",
     });
 
-    $('.art-counter').each(function() {
-      $(this).prop('Counter', 0).animate({
-        Counter: $(this).text()
-      }, {
-        duration: 2000,
-        easing: 'linear',
-        step: function(now) {
-          $(this).text(Math.ceil(now));
-        }
-      });
+    $(".art-counter").each(function () {
+      $(this)
+        .prop("Counter", 0)
+        .animate(
+          {
+            Counter: $(this).text(),
+          },
+          {
+            duration: 2000,
+            easing: "linear",
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            },
+          }
+        );
     });
 
     // slider testimonials
-    var swiper = new Swiper('.art-testimonial-slider', {
+    var swiper = new Swiper(".art-testimonial-slider", {
       slidesPerView: 3,
       spaceBetween: 30,
       speed: 1400,
       autoplay: false,
       autoplaySpeed: 5000,
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: '.art-testi-swiper-next',
-        prevEl: '.art-testi-swiper-prev',
+        nextEl: ".art-testi-swiper-next",
+        prevEl: ".art-testi-swiper-prev",
       },
       breakpoints: {
         1500: {
@@ -571,12 +556,12 @@ $(function() {
         },
         768: {
           slidesPerView: 1,
-        }
+        },
       },
     });
 
     // slider works
-    var swiper = new Swiper('.art-works-slider', {
+    var swiper = new Swiper(".art-works-slider", {
       slidesPerView: 3,
       spaceBetween: 30,
       speed: 1400,
@@ -585,12 +570,12 @@ $(function() {
       },
       autoplaySpeed: 5000,
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: '.art-works-swiper-next',
-        prevEl: '.art-works-swiper-prev',
+        nextEl: ".art-works-swiper-next",
+        prevEl: ".art-works-swiper-prev",
       },
       breakpoints: {
         1500: {
@@ -606,7 +591,7 @@ $(function() {
     });
 
     // slider blog
-    var swiper = new Swiper('.art-blog-slider', {
+    var swiper = new Swiper(".art-blog-slider", {
       slidesPerView: 3,
       spaceBetween: 30,
       speed: 1400,
@@ -615,12 +600,12 @@ $(function() {
       },
       autoplaySpeed: 5000,
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: '.art-blog-swiper-next',
-        prevEl: '.art-blog-swiper-prev',
+        nextEl: ".art-blog-swiper-next",
+        prevEl: ".art-blog-swiper-prev",
       },
       breakpoints: {
         1500: {
@@ -639,50 +624,35 @@ $(function() {
       animationEffect: "zoom-in-out",
       animationDuration: 600,
       transitionDuration: 1200,
-      buttons: [
-        "zoom",
-        "slideShow",
-        "thumbs",
-        "close"
-      ],
+      buttons: ["zoom", "slideShow", "thumbs", "close"],
     });
 
     $('[data-fancybox="diplome"]').fancybox({
       animationEffect: "zoom-in-out",
       animationDuration: 600,
       transitionDuration: 1200,
-      buttons: [
-        "zoom",
-        "slideShow",
-        "thumbs",
-        "close",
-      ],
+      buttons: ["zoom", "slideShow", "thumbs", "close"],
     });
 
     $('[data-fancybox="recommendation"]').fancybox({
       animationEffect: "zoom-in-out",
       animationDuration: 600,
       transitionDuration: 1200,
-      buttons: [
-        "zoom",
-        "slideShow",
-        "thumbs",
-        "close",
-      ],
+      buttons: ["zoom", "slideShow", "thumbs", "close"],
     });
 
     $.fancybox.defaults.hash = false;
 
-    $('.current-menu-item a').clone().prependTo('.art-current-page');
+    $(".current-menu-item a").clone().prependTo(".art-current-page");
 
-    $('.menu-item').on('click', function() {
-      if ($(this).hasClass('menu-item-has-children')) {
-        $(this).children('.sub-menu').toggleClass('art-active');
+    $(".menu-item").on("click", function () {
+      if ($(this).hasClass("menu-item-has-children")) {
+        $(this).children(".sub-menu").toggleClass("art-active");
       } else {
-        $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
+        $(
+          ".art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn"
+        ).removeClass("art-active , art-disabled");
       }
     });
-
-  })
-
+  });
 });
